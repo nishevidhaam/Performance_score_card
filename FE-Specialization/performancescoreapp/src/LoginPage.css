@@ -1,0 +1,64 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #9af7f3c0;
+    background-image: url('http://www.pixelstalk.net/wp-content/uploads/2016/06/Solid-light-blue-wide-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(173, 242, 237);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-label {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    
+  }
+  
+  .login-button {
+    background-color: #b3cfed;
+    color: rgb(224, 13, 13);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 12px;
+    font-weight: bold;
+  }
+  
+  .login-button:hover {
+    background-color: #000912;
+  }
+  
