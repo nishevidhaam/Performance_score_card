@@ -18,9 +18,50 @@ function LoginPage() {
   const handleUserRoleChange = (event) => {
     setUserRole(event.target.value);
   }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if(username=="" || password==""){
+      alert("Enter the valid data")
+      return("Enter the valid data")
+    }
+    const performanceScorecard = {
+      username:username,
+      password:password
+    
+    };
+    
+    try {
+      // Submit the performance scorecard data to the backend API
+      const response = await fetch ('http://localhost:3001/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(performanceScorecard),
+      });
+ 
+      // Handle the response from the backend API
+      const data = await response.json();
+      console.log(data);
+      if(data.hasOwnProperty('error')){
+        alert("Username or password incorrect")
+        return
+      }
+      alert("login successful")
+      navigate("/PerformanceScorecard")
+    } catch (error) {
+
+      // console.error(error);
+    }
+
+
+  }
 
  
   const navigate = useNavigate()
+
+ 
+  
 
   return (
     <div className="login-page">
@@ -46,7 +87,7 @@ function LoginPage() {
           </select>
         </label>
         
-        <button className ="button" onClick={()=>navigate("/PerformanceScorecard")}>Login</button>
+        <button className ="button" onClick={handleSubmit}>Login</button>
       </div>
     </div>
   );
